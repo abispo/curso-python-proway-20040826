@@ -32,9 +32,9 @@ if __name__ == "__main__":
     # <=    -> Menor ou igual a
 
     # Operadores lógicos
-    # and   -> E                    &&
-    # or    -> OU                   ||
-    # not   -> Não (negação)        !
+    # and   -> E                    
+    # or    -> OU                   
+    # not   -> Não (negação)        
 
     # Operadores de identidade
     # is
@@ -55,6 +55,3 @@ if __name__ == "__main__":
     # funções (def teste())
     # classes
     # bibliteca padrão
-
-
-    pass

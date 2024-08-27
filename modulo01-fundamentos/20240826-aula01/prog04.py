@@ -3,11 +3,8 @@ Programa que testa o nível de acesso do usuário
 
 """
 
-from prog02 import lista1
-
 if __name__ == "__main__":
 
-    print(lista1)
     nivel_acesso = int(input("Informe o seu nível de acesso (1-4): "))
 
     match nivel_acesso:

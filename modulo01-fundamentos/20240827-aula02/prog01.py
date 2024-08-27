@@ -80,3 +80,23 @@ Adivinhe a palavra da vez:
 
     print(lista_palavras)
 
+    # Cópia de listas
+
+    # A linha abaixo irá causar um comportamento estranho, pois a alteração de uma lista refletirá na outra
+    # nova_lista_palavras = lista_palavras
+
+    # Para fazer corretamente a cópia de listas, podemos utilizar 2 métodos:
+
+    # 1. O método copy()
+    # nova_lista_palavras = lista_palavras.copy()
+
+    # 2. Utilizar slicing(fatiamento) de listas
+    nova_lista_palavras = lista_palavras[:]
+
+    nova_lista_palavras.append("Felicidade")
+    nova_lista_palavras.extend(["Solidão", "Carinho"])
+
+    print(nova_lista_palavras)
+
+    print(nova_lista_palavras[1:3])
+    

@@ -97,6 +97,27 @@ Adivinhe a palavra da vez:
     nova_lista_palavras.extend(["Solidão", "Carinho"])
 
     print(nova_lista_palavras)
-
     print(nova_lista_palavras[1:3])
-    
+
+    # list-comprehension
+    lista_numeros = [randint(1, 101) for _ in range(5)]
+
+    # lista_numeros = []
+    # for _ in range(100):
+    #     lista_numeros.append(randint(1, 101))
+
+    for numero in lista_numeros:
+
+        if numero < 10:
+            print("Número muito baixo!")
+            break
+
+        elif numero >= 30 and numero <= 70:
+            print("Número na média")
+            continue
+
+        else:
+            print(f"Número {numero}. Próximo...")
+
+    else:
+        print("Sem números muito baixos.")

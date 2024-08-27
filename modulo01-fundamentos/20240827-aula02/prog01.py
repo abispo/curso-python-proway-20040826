@@ -27,6 +27,7 @@ if __name__ == "__main__":
     lista_numeros = []
 
     for _ in range(6):  # 0, 1, 2, 3, 4, 5
+        # O método append insert um novo item no final da lista
         lista_numeros.append(randint(1, 60))
 
     print(lista_numeros)
@@ -59,3 +60,23 @@ Adivinhe a palavra da vez:
         print(f"Parabéns! Você acertou a palavra da vez {palavra_da_vez}.")
     else:
         print("Errou!")
+
+    lista_palavras[3] = "Coração"
+    print(lista_palavras)
+
+    # Adicionar um novo item na lista pela posição. Utilizamos o método insert()
+    lista_palavras.insert(1, "Sentimento")
+    print(lista_palavras)
+
+    # Podemos remover itens de uma lista, utilizando o método pop()
+    lista_palavras.pop()
+    lista_palavras.pop(2)
+
+    # Utilizando o método remove()
+    lista_palavras.remove("Água")
+
+    # Utilizando a palavra reservada del
+    del lista_palavras[1]
+
+    print(lista_palavras)
+

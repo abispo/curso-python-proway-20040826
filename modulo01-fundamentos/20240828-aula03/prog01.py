@@ -33,12 +33,12 @@ if __name__ == "__main__":
     agora = hora_certa()
     print(agora)
 
-    altura = float(input("Informe sua altura em metros (ex: 1.76): "))
-    peso = float(input("Informe o seu peso em Kg (ex: 85.6): "))
+    # altura = float(input("Informe sua altura em metros (ex: 1.76): "))
+    # peso = float(input("Informe o seu peso em Kg (ex: 85.6): "))
 
     # Aqui, estamos passando os valores para a função de maneira posicional, ou seja, estamos passando de acordo com a posição do parâmetro
-    imc = calculo_imc(altura, peso)
-    print(f"Altura: {altura} | Peso: {peso} | IMC: {imc:.1f}")
+    # imc = calculo_imc(altura, peso)
+    # print(f"Altura: {altura} | Peso: {peso} | IMC: {imc:.1f}")
 
     # Também podemos passar os valores para a função pelo nome dos parâmetros, ou, keywords. Por exemplo:
     imc = calculo_imc(altura=1.97, peso=98)
@@ -65,3 +65,36 @@ if __name__ == "__main__":
 
     # O código abaixo não irá funcionar, pois o Python proíbe que os valores dos argumentos passados via posição, apareçam depois dos valores dos argumentos passador por nome
     # valor = calculo_salario(adicional=100, 1500, 1.1)
+
+    lista_imcs = [
+        [1.80, 87.5],
+        [1.76, 89.1],
+        [1.82, 99.8],
+        [1.67, 56.2],
+        [1.74, 89.6],
+    ]
+
+    # for altura, peso in lista_imcs:
+    #     print("{:.1f}".format(calculo_imc(altura, peso)))
+
+    # A linha abaixo terá o mesmo resultado, mas com uma sintaxe mais "clean"
+    for item in lista_imcs:
+        print("{:.1f}".format(calculo_imc(*item)))
+
+    lista_salarios = [
+        {"valor": 1000, "multiplicador": 1.1, "adicional": 200},
+        {"valor": 1500, "multiplicador": 1.1},
+        {"valor": 1800, "multiplicador": 1.3},
+        {"valor": 2000, "multiplicador": 1.2, "adicional": 400},
+        {"valor": 1900, "multiplicador": 1.4},
+    ]
+
+    for item in lista_salarios:
+        # print("{:.2f}".format(calculo_salario(
+        #     valor=item.get("valor"),
+        #     multiplicador=item.get("multiplicador"),
+        #     adicional=item.get("adicional", 0)
+        # )))
+
+        # A linha abaixo retorna o mesmo resultado
+        print("{:.2f}".format(calculo_salario(**item)))

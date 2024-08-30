@@ -30,3 +30,29 @@ if __name__ == "__main__":
 
         # Escrevemos o restante das linhas utilizando o método writerows
         arquivo_csv.writerows(lista_de_itens)
+
+    # --------------------------------
+
+    caminho_arquivo = os.path.join(os.getcwd(), "arquivos", "funcionarios.csv")
+
+    lista_funcionarios = [
+        {"nome": "Maria", "setor": "3"},
+        {"nome": "José", "setor": 1},
+        {"nome": "Amanda", "setor": 1}
+    ]
+
+    with open(caminho_arquivo, "w", encoding="utf-8", newline='') as arquivo:
+
+        arquivo_csv = csv.DictWriter(
+            arquivo,
+            delimiter=';',
+            fieldnames=["nome", "setor"]
+        )
+
+        arquivo_csv.writeheader()
+
+        arquivo_csv.writerow({
+            "nome": "João", "setor": 4
+        })
+
+        arquivo_csv.writerows(lista_funcionarios)
